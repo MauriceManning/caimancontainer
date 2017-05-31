@@ -27,8 +27,7 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
 
 ENV PATH /opt/conda/bin:$PATH
 
-RUN /bin/bash -c 'mkdir /opt; \
-    mkdir /opt/caiman;  \
+RUN /bin/bash -c 'mkdir /opt/caiman; \
     cd /opt/caiman;  \
     git clone  https://github.com/simonsfoundation/CaImAn;  \
     cd CaImAn;  \
