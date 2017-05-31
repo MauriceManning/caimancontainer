@@ -27,7 +27,7 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
 
 ENV PATH /opt/conda/bin:$PATH
 
-RUN mkdir /opt && \
+RUN /bin/bash -c 'mkdir /opt && \
     mkdir /opt/caiman && \
     cd /opt/caiman && \
     git clone  https://github.com/simonsfoundation/CaImAn && \
@@ -39,7 +39,7 @@ RUN mkdir /opt && \
     /opt/conda/bin/pip install -r requirements_pip.txt && \
     /opt/conda/bin/conda install -c menpo opencv3=3.1.0 && \
     /opt/conda/bin/python setup.py build_ext -i && \
-    /opt/conda/bin/conda update --all && \
+    /opt/conda/bin/conda update --all '
     
 
 CMD [ "/bin/bash" ]
