@@ -34,7 +34,7 @@ RUN /bin/bash -c 'mkdir /opt/caiman; \
     git pull;  \
     update conda;  \
     conda create -n CaImAn python=3.5  ipython --file requirements_conda.txt;  \
-    activate CaImAn;  \
+    source activate CaImAn;  \
     pip install -r requirements_pip.txt;  \
     conda install -c menpo opencv3=3.1.0;  \
     python setup.py build_ext -i;  \
