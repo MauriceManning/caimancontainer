@@ -27,18 +27,18 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
 
 ENV PATH /opt/conda/bin:$PATH
 
-RUN /bin/bash -c 'mkdir /opt && \
-    mkdir /opt/caiman && \
-    cd /opt/caiman && \
-    git clone  https://github.com/simonsfoundation/CaImAn && \
-    cd CaImAn && \
-    git pull
-    /opt/conda/bin/conda update conda && \
-    /opt/conda/bin/conda create -n CaImAn python=3.5  ipython --file requirements_conda.txt     && \
-    /opt/conda/bin/activate CaImAn && \
-    /opt/conda/bin/pip install -r requirements_pip.txt && \
-    /opt/conda/bin/conda install -c menpo opencv3=3.1.0 && \
-    /opt/conda/bin/python setup.py build_ext -i && \
+RUN /bin/bash -c 'mkdir /opt; \
+    mkdir /opt/caiman;  \
+    cd /opt/caiman;  \
+    git clone  https://github.com/simonsfoundation/CaImAn;  \
+    cd CaImAn;  \
+    git pull;  \
+    /opt/conda/bin/conda update conda;  \
+    /opt/conda/bin/conda create -n CaImAn python=3.5  ipython --file requirements_conda.txt;  \
+    /opt/conda/bin/activate CaImAn;  \
+    /opt/conda/bin/pip install -r requirements_pip.txt;  \
+    /opt/conda/bin/conda install -c menpo opencv3=3.1.0;  \
+    /opt/conda/bin/python setup.py build_ext -i;  \
     /opt/conda/bin/conda update --all '
     
 
