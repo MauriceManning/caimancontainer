@@ -26,20 +26,7 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     rm ~/anaconda.sh
 
 ENV PATH /opt/conda/bin:$PATH
-    
-RUN mkdir /opt && \
-    mkdir /opt/caiman && \
-    cd /opt/caiman && \
-    git clone  https://github.com/simonsfoundation/CaImAn && \
-    cd CaImAn && \
-    git pull
-    conda update conda && \
-    conda create -n CaImAn python=3.5  ipython --file requirements_conda.txt     && \
-    activate CaImAn && \
-    pip install -r requirements_pip.txt && \
-    conda install -c menpo opencv3=3.1.0 && \
-    python setup.py build_ext -i && \
-    conda update --all && \
+
 
 CMD [ "/bin/bash" ]
 
