@@ -25,6 +25,7 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
     /bin/bash ~/anaconda.sh -b -p /opt/conda && \
     rm ~/anaconda.sh
 
+ENV PATH /opt/conda/bin:$PATH
     
 RUN mkdir /opt && \
     mkdir /opt/caiman && \
@@ -39,8 +40,6 @@ RUN mkdir /opt && \
     conda install -c menpo opencv3=3.1.0 && \
     python setup.py build_ext -i && \
     conda update --all && \
-
-ENV PATH /opt/conda/bin:$PATH
 
 CMD [ "/bin/bash" ]
 
