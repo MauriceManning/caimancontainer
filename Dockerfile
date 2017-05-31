@@ -16,7 +16,7 @@ RUN apt-get update && \
     apt-get update
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
-RUN apt-get update --fix-missing && apt-get install -y gcc wget bzip2 ca-certificates \
+RUN apt-get update --fix-missing && apt-get install -y gcc libgtk2.0-0 wget bzip2 ca-certificates \
     libglib2.0-0 libxext6 libsm6 libxrender1 \
     git mercurial subversion
 
@@ -32,16 +32,17 @@ RUN /bin/bash -c 'mkdir /opt/caiman; \
     git clone  https://github.com/simonsfoundation/CaImAn;  \
     cd CaImAn;  \
     git pull;  \
-    update conda;  \
+    conda update conda;  \
     conda create -n CaImAn python=3.5  ipython --file requirements_conda.txt;  \
     source activate CaImAn;  \
     pip install -r requirements_pip.txt;  \
     conda install -c menpo opencv3=3.1.0;  \
     python setup.py build_ext -i;  \
     conda update --all '
-    
+  
+ENV PATH /opt/conda/bin:$PATH
+ENV PYTHONPATH /opt/caiman/CaImAn/:$PYTHONPATH
 
 CMD [ "/bin/bash" ]
 
-ENTRYPOINT ["caiman"]
 CMD ["-h"]
