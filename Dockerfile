@@ -17,7 +17,7 @@ RUN apt-get update && \
 ENV LANG=C.UTF-8 LC_ALL=C.UTF-8
 
 RUN apt-get update --fix-missing && apt-get install -y gcc libgl1-mesa-dev  libgtk2.0-0 wget bzip2 ca-certificates \
-    libglib2.0-0 libxext6 libsm6 libxrender1 \
+    libglib2.0-0 libxext6 libsm6 libxrender1 vim\
     git mercurial subversion
 
 
@@ -38,7 +38,7 @@ ENV PATH /opt/conda/bin:$PATH
 
 RUN /bin/bash -c 'mkdir /opt/caiman; \
     cd /opt/caiman;  \
-    git clone  https://github.com/simonsfoundation/CaImAn;  \
+    git clone  https://github.com/MauriceManning/CaImAn;  \
     cd CaImAn;  \
     git pull;  \
     conda update conda;  \
