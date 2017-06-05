@@ -49,7 +49,7 @@ RUN /bin/bash -c 'mkdir /opt/caiman; \
     python setup.py build_ext -i;  \
     conda update --all '
   
-RUN pip install PyQt5==5.5.1
+CMD [ "pip", "install", "PyQt5==5.5.1" ]
 
 ## Install Thunder packages
 RUN pip install thunder-registration 
