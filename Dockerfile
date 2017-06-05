@@ -38,7 +38,7 @@ ENV PATH /opt/conda/bin:$PATH
 
 RUN /bin/bash -c 'mkdir /opt/caiman; \
     cd /opt/caiman;  \
-    git clone  https://github.com/MauriceManning/CaImAn;  \
+    git clone  https://github.com/simonsfoundation/CaImAn;  \
     cd CaImAn;  \
     git pull;  \
     conda update conda;  \
