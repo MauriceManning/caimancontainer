@@ -52,13 +52,13 @@ RUN /bin/bash -c 'mkdir /opt/caiman; \
 CMD [ "pip", "install", "PyQt5==5.5.1" ]
 
 ## Install Thunder packages
-RUN pip install thunder-registration 
-RUN pip install thunder-factorization
+RUN /bin/bash -c 'pip install thunder-registration; \ 
+     pip install thunder-factorization '
 
 ## Install Losonczy Lab Sima
-RUN pip install thunder-registration 
+RUN /bin/bash -c 'pip install sima '
 
-RUN mkdir /scratch/
+RUN /bin/bash -c 'mkdir /scratch/'
 
 ENV PATH /opt/conda/bin:$PATH
 ENV PYTHONPATH /opt/caiman/CaImAn/:$PYTHONPATH
