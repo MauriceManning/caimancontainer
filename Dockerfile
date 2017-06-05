@@ -45,7 +45,7 @@ RUN /bin/bash -c 'mkdir /opt/caiman; \
     conda create -n CaImAn python=3.5  ipython --file requirements_conda.txt;  \
     source activate CaImAn;  \
     pip install -r requirements_pip.txt;  \
-    pip install PyQt5==5.5.1;  \
+    pip install PyQt5;  \
     pip install thunder-registration;  \
     pip install thunder-factorization;  \
     pip install sima;  \
