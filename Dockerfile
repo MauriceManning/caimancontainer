@@ -58,6 +58,7 @@ RUN pip install thunder-factorization
 ## Install Losonczy Lab Sima
 RUN pip install thunder-registration 
 
+RUN mkdir /scratch/
 
 ENV PATH /opt/conda/bin:$PATH
 ENV PYTHONPATH /opt/caiman/CaImAn/:$PYTHONPATH
