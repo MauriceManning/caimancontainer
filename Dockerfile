@@ -49,14 +49,14 @@ RUN /bin/bash -c 'mkdir /opt/caiman; \
     python setup.py build_ext -i;  \
     conda update --all '
   
-CMD [ "pip", "install", "PyQt5==5.5.1" ]
+RUN pip install PyQt5==5.5.1
 
 ## Install Thunder packages
-CMD [ "pip", "install", "thunder-registration" ]
-CMD [ "pip", "install", "thunder-factorization" ]
+RUN pip install thunder-registration 
+RUN pip install thunder-factorization
 
 ## Install Losonczy Lab Sima
-CMD [ "pip", "install", "thunder-registration" ]
+RUN pip install thunder-registration 
 
 
 ENV PATH /opt/conda/bin:$PATH
