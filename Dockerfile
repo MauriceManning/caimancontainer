@@ -50,7 +50,15 @@ RUN /bin/bash -c 'mkdir /opt/caiman; \
     conda update --all '
   
 CMD [ "pip", "install", "PyQt5==5.5.1" ]
-  
+
+## Install Thunder packages
+CMD [ "pip", "install", "thunder-registration" ]
+CMD [ "pip", "install", "thunder-factorization" ]
+
+## Install Losonczy Lab Sima
+CMD [ "pip", "install", "thunder-registration" ]
+
+
 ENV PATH /opt/conda/bin:$PATH
 ENV PYTHONPATH /opt/caiman/CaImAn/:$PYTHONPATH
 
