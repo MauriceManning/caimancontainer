@@ -55,6 +55,7 @@ RUN /bin/bash -c 'mkdir /opt/caiman; \
 ##CMD [ "pip", "install", "PyQt5==5.5.1" ]
 
 RUN /bin/bash -c 'mkdir /scratch/'
+RUN /bin/bash -c 'mkdir /global/'
 
 ENV PATH /opt/conda/bin:$PATH
 ENV PYTHONPATH /opt/caiman/CaImAn/:$PYTHONPATH
