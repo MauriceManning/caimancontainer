@@ -11,3 +11,4 @@ PYTHONPATH=/opt/caiman/CaImAn/:$PYTHONPATH
 export SHELL PATH SINGULARITY_SHELL PYTHONPATH
 
 exec mkdir /scratch/
+exec mkdir /global/
