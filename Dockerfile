@@ -47,7 +47,7 @@ RUN /bin/bash -c 'mkdir /opt/caiman; \
     pip install -r requirements_pip.txt;  \
     pip install thunder-registration;  \
     pip install thunder-factorization;  \
-    conda install -c menpo opencv3=3.1.0;  \
+    conda install -c menpo opencv3=3.0.0;  \
     python setup.py build_ext -i;  \
     conda update --all '
   
