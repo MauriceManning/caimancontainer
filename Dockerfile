@@ -38,17 +38,15 @@ ENV PATH /opt/conda/bin:$PATH
 
 RUN /bin/bash -c 'mkdir /opt/caiman; \
     cd /opt/caiman;  \
-    git clone  https://github.com/elyall/CaImAn;  \
+    git clone  https://github.com/MauriceManning/CaImAn;  \
     cd CaImAn;  \
     git pull;  \
     conda update conda;  \
     conda create -n CaImAn python=3.5  ipython --file requirements_conda.txt;  \
     source activate CaImAn;  \
-    conda install numpy=1.12.1; \
     pip install -r requirements_pip.txt;  \
     pip install thunder-registration;  \
     pip install thunder-factorization;  \
-    pip install cvxpy; \
     conda install -c menpo opencv3=3.1.0;  \
     python setup.py build_ext -i;  \
     conda update --all '
