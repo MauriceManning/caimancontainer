@@ -44,15 +44,19 @@ RUN /bin/bash -c 'mkdir /opt/caiman; \
     conda update conda;  \
     conda create -n CaImAn python=3.5  ipython --file requirements_conda.txt;  \
     source activate CaImAn;  \
+    conda install numpy=1.12.1; \
     pip install -r requirements_pip.txt;  \
     pip install thunder-registration;  \
     pip install thunder-factorization;  \
-    pip install sima;  \
+    pip install cvxpy; \
     conda install -c menpo opencv3=3.1.0;  \
     python setup.py build_ext -i;  \
     conda update --all '
   
 ##CMD [ "pip", "install", "PyQt5==5.5.1" ]
+
+
+
 
 RUN /bin/bash -c 'mkdir /scratch/'
 RUN /bin/bash -c 'mkdir /global/'
