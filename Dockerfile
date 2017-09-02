@@ -44,6 +44,7 @@ RUN /bin/bash -c 'mkdir /opt/caiman; \
     conda update conda;  \
     conda create -n CaImAn python=3.5  ipython --file requirements_conda.txt;  \
     source activate CaImAn;  \
+    conda install -c cvxgrp cvxpy \
     pip install -r requirements_pip.txt;  \
     conda install -c menpo opencv3=3.2.0;  \ 
     python setup.py build_ext -i;  '
